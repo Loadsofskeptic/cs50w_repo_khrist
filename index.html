@@ -17,22 +17,33 @@
             }
             
             div {
-                margin: 1px 0 1px 0;
                 border-color: black;
                 border-width: 1px;
-                border-style: solid
+                border-style: solid;
+                padding: 5px;
             }
 
             #header{
                 /*TODO*/
-                display: inline-block;
+                display: block;
+                width: 30%;
+                margin: 0 0 50px auto;
+                /* margin: 0 0 0 auto; top right bottom left */
+            }
+
+            #header-links{
                 position: relative;
-                margin: 0 auto 0 auto; /*top right bottom left*/
+                display: block;
+                width: 50%;
+                margin: 0 0 0 auto;
             }
 
             .page-links {
                 color: rgba(0, 0, 0, .87);
                 text-decoration: none;
+                width: 100%;
+                position: relative;
+                padding: 0 5px 0 5px;
             }
 
             .page-links:hover{
@@ -44,8 +55,10 @@
     <body>
         <div id="header">
             <!--link should be seen on the upper right-->
-            <a class="page-links" href="Image Search.html">Image Search</a>
-            <a class="page-links" href="Advance Search.html">Advance Search</a>
+            <div id = "header-links">
+                <a class="page-links" href="Image Search.html">Image Search</a>
+                <a class="page-links" href="Advance Search.html">Advance Search</a>
+            </div>
         </div>
         <div id="body">
             <img src="Google_2015_logo.svg">
@@ -67,30 +80,16 @@
         <div id="footer">
             <div id="footer-left">
                 <!--TODO implement a link-->
-                <div>
-                    About
-                </div>
-                <div>
-                    Advertising
-                </div>
-                <div>
-                    Business
-                </div>
-                <div>
-                    How Search works
-                </div>
+                <p>About</p>
+                <p>Advertising</p>
+                <p>Business</p>
+                <p>How Search works</p>
             </div>
             <div id="footer-right">
                 <!--TODO implement a link-->
-                <div>
-                    Privacy
-                </div>
-                <div>
-                    Terms
-                </div>
-                <div>
-                    Settings
-                </div>
+                <p>Privacy</p>
+                <p>Terms</p>
+                <p>Settings</p>
             </div>
         </div>
     </body>
