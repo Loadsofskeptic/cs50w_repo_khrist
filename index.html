@@ -13,28 +13,32 @@
             body {
                 font-family: Arial, sans-serif;
                 color: #d2d2d2;
-                font-size: 0.90em;
+                font-size: 14px;
+                height: 100%;
             }
             
             div {
-                border-color: black;
-                border-width: 1px;
+                /* border-color: black;
                 border-style: solid;
+                border-width: 5px; */
                 padding: 5px;
             }
 
             #header{
                 /*TODO*/
-                display: block;
-                width: 30%;
-                margin: 0 0 50px auto;
+                display: grid;
+                grid-template-columns: auto;
+                justify-self: end;
+                width: 400px;
+                margin: 0 0 50px 0;
                 /* margin: 0 0 0 auto; top right bottom left */
             }
 
             #header-links{
+                display: grid;
+                grid-template-columns: auto auto;
                 position: relative;
-                display: block;
-                width: 50%;
+                justify-content: end;
                 margin: 0 0 0 auto;
             }
 
@@ -50,6 +54,107 @@
                 /* color: rgba(0, 0, 0, .87); */
                 text-decoration: underline;
             }
+
+            #google{
+                display: block;
+                height: 90px;
+                width: 580px;
+                margin: 50px auto 25px auto;
+            }
+
+            #searchbar{
+                width: 580px;
+                margin: 0 auto 0 auto;
+            }
+
+            #searchbar-search {
+                border-radius: 100px;
+                border-color: #dfe1e5;
+                border-style: solid;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+
+            #text-field{
+                width: 80%;
+                height: 25px;
+                line-height: 15px;
+                border-color: white;
+                border-style: none;   
+                border: transparent;
+                outline: none;
+                overflow-y: auto;
+            }
+
+            .icons{
+                height: 1.25em;
+                margin: 0 0.5em 0 0.5em;
+            }
+
+            #searchbar-buttons{
+                display: flex;
+                width: 50%;
+                margin: 25px auto 0 auto;
+            }
+            
+            .searchbar-buttons-click{
+                margin: 0 3% 0 3%;
+                align-items: center;
+                width: 52%;
+                border-style: none;
+                border-color: white;
+                border-radius: 5px;
+                height: 35px;
+            }
+
+            .searchbar-buttons-click:hover{
+                border-style: solid;
+                box-shadow: 5px  #888888;
+            }
+
+            #footer{
+                position: fixed;
+                left:0;
+                bottom:0;
+                width:100%;
+                display: grid;
+                grid-template-columns: auto auto;
+                background-color: #d2d2d2;
+                color: black;
+                height: 40px;
+                align-items: center;
+            }
+
+            #footer-left > p, #footer-right > p{
+                margin: 0 auto 0 auto;
+            }
+
+            #footer-left{
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                width: 400px;
+            }
+            
+            #footer-right{
+                justify-self: end;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                width: 300px;
+            }
+
+            #item-start{
+                grid-column-start: 2;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                
+                footer-left, footer-right, footer{
+                justify-content: space-evenly;
+                }
+            }
+
         </style>
     </head>
     <body>
@@ -61,18 +166,19 @@
             </div>
         </div>
         <div id="body">
-            <img src="Google_2015_logo.svg">
+            <img src="Google_2015_logo.svg" id="google">
 
             <div id="searchbar">
                 <form action="https://www.google.com/search">
-                    <img src="glass.png" alt="google search glass" style="height:25px;">
-                    <input type="text" name="q">
-                    <img src="glens.png" alt="google lens" style="height:25px;">
-                    <img src="gmic.png" alt="google mic" style="height:25px;">
-                    
+                    <div id = "searchbar-search">
+                        <img src="glass.png" class="icons" alt="google search glass">
+                        <input type="text" name="q" id="text-field">
+                        <img src="gmic.png" class="icons" alt="google mic">
+                        <img src="glens.png" class="icons" alt="google lens">
+                    </div>
                     <div id="searchbar-buttons">
-                        <input id="gsearch" value="Google Search" name="btnK" type="submit">
-                        <input id="luckyfeeling" value="I'm Feeling Lucky" name="btnI" type="submit">
+                        <input class="searchbar-buttons-click" value="Google Search" name="btnK" type="submit">
+                        <input class="searchbar-buttons-click" value="I'm Feeling Lucky" name="btnI" type="submit">
                     </div>
                 </form>
             </div>
@@ -87,7 +193,7 @@
             </div>
             <div id="footer-right">
                 <!--TODO implement a link-->
-                <p>Privacy</p>
+                <p id="item-start">Privacy</p>
                 <p>Terms</p>
                 <p>Settings</p>
             </div>
